@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+
+# TODO: parse cli args
+
+# TODO: generate dockerfile(s)
+
+# TODO: build awesome containers!
