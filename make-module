@@ -46,6 +46,10 @@ def parse_args():
     )
 
     result = parser.parse_args()
+
+    if not result.output and not result.build:
+        parser.error('none of output and build options was provided')
+
     result.modules = sorted(set(result.modules)) if result.modules else available_modules
     return result
 
