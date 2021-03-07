@@ -28,6 +28,18 @@ def parse_args():
     )
 
     parser.add_argument(
+        '-o', '--output',
+        type=str,
+        help='Directory to output generated dockerfiles'
+    )
+
+    parser.add_argument(
+        '-b', '--build',
+        action='store_true',
+        help='Build images by generated dockerfile(s)',
+    )
+
+    parser.add_argument(
         '-D', '--debug',
         action='store_true',
         help='Makes application to output debugging information',
