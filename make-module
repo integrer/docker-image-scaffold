@@ -14,41 +14,35 @@ def parse_args():
     available_modules = sorted(modules.keys())
 
     parser.add_argument(
-        '--modules',
+        '--modules', help='Module(s) that should built (both by default)',
         nargs='*', default=available_modules, choices=available_modules,
-        help='Module(s) that should built (both by default)'
     )
 
     available_modes = ['production', 'development']
 
     parser.add_argument(
-        '--mode',
+        '--mode', help='Mode to build modules',
         choices=available_modes, default='production',
-        help='Mode to build modules'
     )
 
     parser.add_argument(
-        '-o', '--output',
+        '-o', '--output', help='Directory to output generated dockerfiles',
         type=str,
-        help='Directory to output generated dockerfiles'
     )
 
     parser.add_argument(
-        '-b', '--build',
+        '-b', '--build', help='Build images by generated dockerfile(s)',
         action='store_true',
-        help='Build images by generated dockerfile(s)',
     )
 
     parser.add_argument(
-        '-D', '--debug',
+        '-D', '--debug', help='Makes application to output debugging information',
         action='store_true',
-        help='Makes application to output debugging information',
     )
 
     parser.add_argument(
-        '-d', '--dry-run',
+        '-d', '--dry-run', help='Run app without making changes',
         action='store_true',
-        help='Run app without making changes',
     )
 
     result = parser.parse_args()
