@@ -15,7 +15,7 @@ def parse_args():
 
     parser.add_argument(
         '--modules', help='Module(s) that should built (both by default)',
-        nargs='*', default=available_modules, choices=available_modules,
+        nargs='*', choices=available_modules,
     )
 
     available_modes = ['production', 'development']
