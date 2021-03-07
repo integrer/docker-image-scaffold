@@ -2,6 +2,8 @@
 
 import argparse
 
+# TODO: loading schema from yaml file
+# TODO: config validation
 modules = {
     'backend': {},
     'frontend': {},
