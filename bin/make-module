@@ -27,6 +27,14 @@ def parse_args():
         help='Mode to build modules'
     )
 
+    parser.add_argument(
+        '--debug', '-D',
+    )
+
+    parser.add_argument(
+        '--dry-run', '-d',
+    )
+
     result = parser.parse_args()
     result.modules = sorted(set(result.modules)) if result.modules else available_modules
     return result
