@@ -11,7 +11,7 @@ modules = {
 def parse_args():
     parser = argparse.ArgumentParser(description='generates new dockerfiles for selected modules')
 
-    available_modules = modules.keys()
+    available_modules = sorted(modules.keys())
 
     parser.add_argument(
         '--modules',
@@ -28,7 +28,7 @@ def parse_args():
     )
 
     result = parser.parse_args()
-    result.modules = sorted(set(result.modules or available_modules))
+    result.modules = sorted(set(result.modules)) if result.modules else available_modules
     return result
 
 
