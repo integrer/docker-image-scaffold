@@ -29,10 +29,14 @@ def parse_args():
 
     parser.add_argument(
         '--debug', '-D',
+        action='store_true',
+        help='Makes application to output debugging information',
     )
 
     parser.add_argument(
         '--dry-run', '-d',
+        action='store_true',
+        help='Run app without making changes',
     )
 
     result = parser.parse_args()
@@ -41,6 +45,7 @@ def parse_args():
 
 
 args = parse_args()
+print(args)
 
 # TODO: generate dockerfile(s)
 
